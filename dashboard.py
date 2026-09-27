@@ -453,7 +453,42 @@ display_alerts = display_alerts[
         "detection",
     ]
 ]
-    
+st.dataframe(
+        display_alerts,
+        use_container_width=True,
+        hide_index=True,
+        height=360,
+        column_config={
+            "timestamp": st.column_config.TextColumn(
+                "Timestamp",
+                width="medium"
+            ),
+            "alert_type": st.column_config.TextColumn(
+                "Alert Type",
+                width="large"
+            ),
+            "severity": st.column_config.TextColumn(
+                "Severity",
+                width="small"
+            ),
+            "source_ip": st.column_config.TextColumn(
+                "Source IP",
+                width="medium"
+            ),
+            "destination_ip": st.column_config.TextColumn(
+                "Destination IP",
+                width="medium"
+            ),
+            "Count": st.column_config.NumberColumn(
+                "Count",
+                width="small"
+            ),
+            "detection": st.column_config.TextColumn(
+                "Detection",
+                width="large"
+            ),
+        }
+    )
 
 
 # ==========================================================
